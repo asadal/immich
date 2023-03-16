@@ -43,7 +43,7 @@ def run_engine(engine, path):
     result = []
     predictions = engine(path)
 
-    for index, pred in enumerate(predictions):
+    for pred in predictions:
         tags = pred['label'].split(', ')
         if (pred['score'] > 0.9):
             result = [*result, *tags]
